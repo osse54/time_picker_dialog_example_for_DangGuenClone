@@ -2,6 +2,8 @@ package com.example.time_picker_dialog_example;
 
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
                 .setTitleText("시간 선택") // Dialog 제목
                 .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD) // 생성되면 키보드로 입력하도록 설정
                 .build();
+
+        materialTimePicker.addOnPositiveButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 완료 버튼 클릭 시
+                Log.i(TAG, "onClick: " + materialTimePicker.getHour() + "시 " + materialTimePicker.getMinute() + "분");
+            }
+        });
 
         // Dialog 출력
         materialTimePicker.show(getSupportFragmentManager(), TAG);
