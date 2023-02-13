@@ -50,5 +50,11 @@ public class MainActivity extends AppCompatActivity {
         이슈 링크:
         https://github.com/material-components/material-components-android/issues/2862
          */
+
+        /*
+        색상 변경
+        themes.xml에서 colorPrimary를 purple_500으로 가지고 있다.
+        해당 변수의 색상을 변경하면 Dialog의 테마 색이 변경되는 것을 확인할 수 있다.
+         */
     }
 }
